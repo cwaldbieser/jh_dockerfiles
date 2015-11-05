@@ -23,6 +23,7 @@ RUN /root/.virtualenvs/jupyterenv3/bin/pip install cython
 RUN /root/.virtualenvs/jupyterenv3/bin/pip install python-dateutil
 RUN /bin/bash -c 'cd /srv/matplotlib; /root/.virtualenvs/jupyterenv3/bin/python /srv/matplotlib/setup.py install' 
 RUN /root/.virtualenvs/jupyterenv3/bin/pip install pandas
+RUN /root/.virtualenvs/jupyterenv3/bin/pip install jupyter
 
 # Install new kernel.
 RUN mkdir -p /usr/local/share/jupyter/kernels/python3mpl
