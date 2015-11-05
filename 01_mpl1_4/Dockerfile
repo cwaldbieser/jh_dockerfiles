@@ -21,7 +21,7 @@ RUN /bin/bash -c 'source /usr/share/virtualenvwrapper/virtualenvwrapper.sh; mkvi
 RUN git clone git://github.com/matplotlib/matplotlib.git /srv/matplotlib
 RUN /root/.virtualenvs/jupyterenv3/bin/pip install cython
 RUN /root/.virtualenvs/jupyterenv3/bin/pip install python-dateutil
-RUN /root/.virtualenvs/jupyterenv3/bin/python /srv/matplotlib/setup.py install 
+RUN /bin/bash -c 'cd /srv/matplotlib; /root/.virtualenvs/jupyterenv3/bin/python /srv/matplotlib/setup.py install' 
 RUN /root/.virtualenvs/jupyterenv3/bin/pip install pandas
 
 # Install new kernel.
