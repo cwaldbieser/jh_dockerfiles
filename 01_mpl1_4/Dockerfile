@@ -6,7 +6,7 @@ RUN adduser --disabled-password --gecos '' hubuser
 RUN echo 'hubuser:hubtest:::::' | newusers
 
 # Copy config file.
-COPY jupyterhub_config.py /srv/jupyterhub
+COPY jupyterhub_config.py /srv/jupyterhub/
 
 # Install OS deps.
 RUN apt-get update && apt-get install -y \
@@ -26,5 +26,5 @@ RUN /root/.virtualenvs/jupyterenv3/bin/pip install pandas
 
 # Install new kernel.
 RUN mkdir -p /usr/local/share/jupyter/kernels/python3mpl
-COPY kernel.json /usr/local/share/jupyter/kernels/python3mpl
-
+COPY kernel.json /usr/local/share/jupyter/kernels/python3mpl/
+RUN chmod go+rx /root
