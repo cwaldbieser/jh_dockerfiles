@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Jupyterhub Demo",
+        "scheme": "http",
+        "netloc": "localhost:8080",
+        "path": "/",
+        "child_paths": true,
+        "required_params": null,
+        "SSO": true
+    }
+]
